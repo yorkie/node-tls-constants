@@ -1,6 +1,6 @@
 {
   "name": "tls-constants",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "constants collection for tls",
   "main": "constants.js",
   "scripts": {
