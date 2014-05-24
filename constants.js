@@ -1,6 +1,7 @@
 
 var TLS = {
   'Versions': {
+    '1.0': [ 0x03, 0x01 ],
     '1.1': [ 0x03, 0x02 ],
     '1.2': [ 0x03, 0x03 ]
   },
@@ -12,6 +13,12 @@ var TLS = {
     'default': 255
   }
 };
+
+TLS.ContentTypes[20] = 'change_cipher_spec';
+TLS.ContentTypes[21] = 'alert';
+TLS.ContentTypes[22] = 'handshake';
+TLS.ContentTypes[23] = 'application_data';
+TLS.ContentTypes[255] = 'default';
 
 var Handshake = {
   Types: {
