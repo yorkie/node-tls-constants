@@ -28,5 +28,42 @@ var Handshake = {
   }
 };
 
+var alert = {
+  level: [],
+  description: []
+}
+
+// constants for parsing
+
+alert.level[1] = 'warning';
+alert.level[2] = 'fatal';
+
+alert.description[0] = 'close_notify';
+alert.description[10] = 'unexpected_message';
+alert.description[20] = 'bad_record_mac';
+alert.description[21] = 'decryption_failed_RESERVED';
+alert.description[22] = 'record_overflow';
+alert.description[30] = 'decompression_failure';
+alert.description[40] = 'handshake_failure';
+alert.description[41] = 'no_certificate_RESERVED';
+alert.description[42] = 'bad_certificate';
+alert.description[43] = 'unsupported_certificate';
+alert.description[44] = 'certificate_revoked';
+alert.description[45] = 'certificate_expired';
+alert.description[46] = 'certificate_unknown';
+alert.description[47] = 'illegal_parameter';
+alert.description[48] = 'unknown_ca';
+alert.description[49] = 'access_denied';
+alert.description[50] = 'decode_error';
+alert.description[51] = 'decrypt_error';
+alert.description[60] = 'export_restriction_RESERVED';
+alert.description[70] = 'protocol_version';
+alert.description[71] = 'insufficient_security';
+alert.description[80] = 'internal_error';
+alert.description[90] = 'user_canceled';
+alert.description[100] = 'no_renegotiation';
+alert.description[110] = 'unsupported_extension';
+
 exports.TLS = TLS;
 exports.Handshake = Handshake;
+exports.alert = alert;
