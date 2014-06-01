@@ -32,8 +32,62 @@ var Handshake = {
     certificate_verify: 15,
     client_key_exchange: 16,
     finished: 20
-  }
+  },
+  types: { /* compatible */ },
+  cipher_suites: {}
 };
+
+var handshake = Handshake;
+handshake.types[0] = 'hello_request';
+handshake.types[1] = 'client_hello';
+handshake.types[2] = 'server_hello';
+handshake.types[11] = 'certificate';
+handshake.types[12] = 'server_key_exchange';
+handshake.types[13] = 'certificate_request';
+handshake.types[14] = 'server_hello_done';
+handshake.types[15] = 'certificate_verify';
+handshake.types[16] = 'client_key_exchange';
+handshake.types[20] = 'finished';
+
+handshake.cipher_suites[0x0000] = 'TLS_NULL_WITH_NULL_NULL';
+handshake.cipher_suites[0x0001] = 'TLS_RSA_WITH_NULL_MD5';
+handshake.cipher_suites[0x0002] = 'TLS_RSA_WITH_NULL_SHA';
+handshake.cipher_suites[0x003b] = 'TLS_RSA_WITH_NULL_SHA256';
+handshake.cipher_suites[0x0004] = 'TLS_RSA_WITH_RC4_128_MD5';
+handshake.cipher_suites[0x0005] = 'TLS_RSA_WITH_RC4_128_SHA';
+handshake.cipher_suites[0x000a] = 'TLS_RSA_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x002f] = 'TLS_RSA_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x0035] = 'TLS_RSA_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x003c] = 'TLS_RSA_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x003d] = 'TLS_RSA_WITH_AES_256_CBC_SHA256';
+
+handshake.cipher_suites[0x000d] = 'TLS_DH_DSS_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x0010] = 'TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x0013] = 'TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x0016] = 'TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x0030] = 'TLS_DH_DSS_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x0031] = 'TLS_DH_RSA_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x0032] = 'TLS_DHE_DSS_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x0033] = 'TLS_DHE_RSA_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x0036] = 'TLS_DH_DSS_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x0037] = 'TLS_DH_RSA_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x0038] = 'TLS_DHE_DSS_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x0039] = 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x003e] = 'TLS_DH_DSS_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x003f] = 'TLS_DH_RSA_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x0040] = 'TLS_DHE_DSS_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x0067] = 'TLS_DHE_RSA_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x0068] = 'TLS_DH_DSS_WITH_AES_256_CBC_SHA256';
+handshake.cipher_suites[0x0069] = 'TLS_DH_RSA_WITH_AES_256_CBC_SHA256';
+handshake.cipher_suites[0x006a] = 'TLS_DHE_DSS_WITH_AES_256_CBC_SHA256';
+handshake.cipher_suites[0x006b] = 'TLS_DHE_RSA_WITH_AES_256_CBC_SHA256';
+
+handshake.cipher_suites[0x0018] = 'TLS_DH_anon_WITH_RC4_128_MD5';
+handshake.cipher_suites[0x001b] = 'TLS_DH_anon_WITH_3DES_EDE_CBC_SHA';
+handshake.cipher_suites[0x0034] = 'TLS_DH_anon_WITH_AES_128_CBC_SHA';
+handshake.cipher_suites[0x003a] = 'TLS_DH_anon_WITH_AES_256_CBC_SHA';
+handshake.cipher_suites[0x006c] = 'TLS_DH_anon_WITH_AES_128_CBC_SHA256';
+handshake.cipher_suites[0x006d] = 'TLS_DH_anon_WITH_AES_256_CBC_SHA256';
 
 var alert = {
   level: [],
@@ -73,4 +127,5 @@ alert.description[110] = 'unsupported_extension';
 
 exports.TLS = TLS;
 exports.Handshake = Handshake;
+exports.handshake = handshake;
 exports.alert = alert;
