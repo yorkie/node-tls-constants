@@ -34,7 +34,17 @@ var Handshake = {
     finished: 20
   },
   types: { /* compatible */ },
-  cipher_suites: {}
+  cipher_suites: {},
+  keyExchange: {
+    algorithms: [
+      'dhe_dss',
+      'dhe_rsa',
+      'dh_anon',
+      'rsa',
+      'dh_dss',
+      'dh_rsa'
+    ]
+  }
 };
 
 var handshake = Handshake;
